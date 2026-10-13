@@ -1,14 +1,21 @@
 import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { Profile } from './profile/profile';
 
 @Component({
-  imports: [RouterOutlet],
+  imports: [RouterOutlet, Profile],
   selector: 'app-root',
   styleUrl: './app.css',
   templateUrl: './app.html',
+  // template:`<h1>Inline Template {{name}}<h1>`,
 })
 export class App {
-  protected readonly title = signal('Hello Angular 22');
-  name = 'Deepak Thakur';
-  age = 26;
+  name="Deepak Thakur"
+  email="ndktbd@gmail.com"
+  getName(){
+    return this.name;
+  }
+  getValue(a:number,b:number){
+    return a+b;
+  }
 }
