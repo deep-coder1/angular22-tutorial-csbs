@@ -9,13 +9,27 @@ import { Profile } from './profile/profile';
   templateUrl: './app.html',
   // template:`<h1>Inline Template {{name}}<h1>`,
 })
+// export class App {
+//   name="Deepak Thakur"
+//   email="ndktbd@gmail.com"
+//   getName(){
+//     return this.name;
+//   }
+//   getValue(a:number,b:number){
+//     return a+b;
+//   }
+// }
 export class App {
-  name="Deepak Thakur"
-  email="ndktbd@gmail.com"
-  getName(){
-    return this.name;
-  }
-  getValue(a:number,b:number){
-    return a+b;
+  // callMe(){
+  //   alert("Hello Angular 22")
+  // }
+
+  count = 0;
+  counter(action: string) {
+    if (action == 'minus') {
+      this.count>0 && this.count--;
+    } else {
+      this.count++;
+    }
   }
 }
