@@ -19,17 +19,31 @@ import { Profile } from './profile/profile';
 //     return a+b;
 //   }
 // }
-export class App {
-  // callMe(){
-  //   alert("Hello Angular 22")
-  // }
 
-  count = 0;
-  counter(action: string) {
-    if (action == 'minus') {
-      this.count>0 && this.count--;
-    } else {
-      this.count++;
-    }
+// Events Binding 
+// export class App {
+//   // callMe(){
+//   //   alert("Hello Angular 22")
+//   // }
+
+//   count = 0;
+//   counter(action: string) {
+//     if (action == 'minus') {
+//       this.count>0 && this.count--;
+//     } else {
+//       this.count++;
+//     }
+//     this.showUserName();
+//   }
+
+//   showUserName(){
+//     alert("Hello");
+//   }
+// }
+
+// Events 
+export class App {
+  handleEvent(eventName:string){
+    console.log(eventName);
   }
 }
