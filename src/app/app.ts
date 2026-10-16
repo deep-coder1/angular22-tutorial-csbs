@@ -41,9 +41,18 @@ import { Profile } from './profile/profile';
 //   }
 // }
 
-// Events 
+// // Events 
+// export class App {
+//   handleEvent(eventName:string){
+//     console.log(eventName);
+//   }
+// }
+
+// Data Types in Angular 
 export class App {
-  handleEvent(eventName:string){
-    console.log(eventName);
+  data:number = 20
+
+  updateData(){
+    this.data=40
   }
 }
