@@ -50,9 +50,24 @@ import { Profile } from './profile/profile';
 
 // Data Types in Angular 
 export class App {
-  data:number = 20
+  data:any = 20
 
-  updateData(){
-    this.data=40
+  updateData(val:number, user:string){
+    this.data=val
+    console.log(user);
+
+    console.log(this.sum(10,20));
+  }
+
+  sum(a:number,b:number):number{
+    return a+b
+  }
+
+  handleEvent(event:PointerEvent | Event | MouseEvent){
+    console.log(event);
+  }
+
+  handleEvent2(event:Event){
+    console.log(event);
   }
 }
