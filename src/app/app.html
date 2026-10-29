@@ -34,12 +34,21 @@
     
 </div> -->
 
-<h1>Data Type</h1>
+<!-- <h1>Data Type</h1>
 <h2>{{data}}</h2>
 <button (click)="updateData(60, 'deepak thakur')">Update Data</button>
 <button (click)="handleEvent($event)">Click</button>
-<!-- <input type="text" (change)="handleEvent2($event)"> -->
+<input type="text" (change)="handleEvent2($event)">
 <input type="text" (change)="handleEvent($event)">
 <div (mouseenter)="handleEvent($event)">
     <h1>Test event</h1>
-</div>
+</div> -->
+
+<h1>Angular Property Binding </h1>
+<!-- <button disabled="{{btnDisable}}">Click Me</button>
+<button [disabled]="btnDisable">Click Me</button> -->
+<input type="text" readonly="{{inputReadonly}}">
+<input type="text" [readonly]="inputReadonly">
+<!-- <img src="{{url}}" alt="Angular Logo" width="200px"> -->
+<img [src]="url" alt="Angular Logo" width="200px">
+<button (click)="toggle()">Toggle</button>

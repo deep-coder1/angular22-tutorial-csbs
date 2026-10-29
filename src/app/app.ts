@@ -48,26 +48,38 @@ import { Profile } from './profile/profile';
 //   }
 // }
 
-// Data Types in Angular 
+// // Data Types in Angular 
+// export class App {
+//   data:any = 20
+
+//   updateData(val:number, user:string){
+//     this.data=val
+//     console.log(user);
+
+//     console.log(this.sum(10,20));
+//   }
+
+//   sum(a:number,b:number):number{
+//     return a+b
+//   }
+
+//   handleEvent(event:PointerEvent | Event | MouseEvent){
+//     console.log(event);
+//   }
+
+//   handleEvent2(event:Event){
+//     console.log(event);
+//   }
+// }
+
+
+// Angular Property Binding 
 export class App {
-  data:any = 20
-
-  updateData(val:number, user:string){
-    this.data=val
-    console.log(user);
-
-    console.log(this.sum(10,20));
-  }
-
-  sum(a:number,b:number):number{
-    return a+b
-  }
-
-  handleEvent(event:PointerEvent | Event | MouseEvent){
-    console.log(event);
-  }
-
-  handleEvent2(event:Event){
-    console.log(event);
+  btnDisable=false;
+  inputReadonly=false;
+  url="https://dac.digital/wp-content/uploads/2023/05/angular-logo-1-1920x1920-optimized.png"
+  
+  toggle(){
+    this.btnDisable=!this.btnDisable;
   }
 }
