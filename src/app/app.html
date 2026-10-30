@@ -44,11 +44,17 @@
     <h1>Test event</h1>
 </div> -->
 
-<h1>Angular Property Binding </h1>
+<!-- <h1>Angular Property Binding </h1> -->
 <!-- <button disabled="{{btnDisable}}">Click Me</button>
 <button [disabled]="btnDisable">Click Me</button> -->
-<input type="text" readonly="{{inputReadonly}}">
-<input type="text" [readonly]="inputReadonly">
+<!-- <input type="text" readonly="{{inputReadonly}}">
+<input type="text" [readonly]="inputReadonly"> -->
 <!-- <img src="{{url}}" alt="Angular Logo" width="200px"> -->
-<img [src]="url" alt="Angular Logo" width="200px">
-<button (click)="toggle()">Toggle</button>
+<!-- <img [src]="url" alt="Angular Logo" width="200px">
+<button (click)="toggle()">Toggle</button> -->
+
+<h1>Signals</h1>
+<button (click)="updateData()">Update Data</button>
+<h2>{{data}}</h2>
+<button (click)="updateCount()">Update Count</button>
+<h2>Signal: {{count()}}</h2>

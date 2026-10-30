@@ -1,4 +1,4 @@
-import { Component, signal } from '@angular/core';
+import { Component, effect, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { Profile } from './profile/profile';
 
@@ -74,12 +74,37 @@ import { Profile } from './profile/profile';
 
 
 // Angular Property Binding 
-export class App {
-  btnDisable=false;
-  inputReadonly=false;
-  url="https://dac.digital/wp-content/uploads/2023/05/angular-logo-1-1920x1920-optimized.png"
+// export class App {
+//   btnDisable=false;
+//   inputReadonly=false;
+//   url="https://dac.digital/wp-content/uploads/2023/05/angular-logo-1-1920x1920-optimized.png"
   
-  toggle(){
-    this.btnDisable=!this.btnDisable;
+//   toggle(){
+//     this.btnDisable=!this.btnDisable;
+//   }
+// }
+
+
+// Signals 
+export class App {
+  data = 10;
+  count = signal(0)
+
+  constructor(){
+    effect(()=>{
+      console.log("This is data ", this.data)
+      console.log("This is count ", this.count())
+      if(this.count()==10){
+        this.count.set(0)
+      }
+    })
+  }
+
+  updateData(){
+    this.data++
+  }
+
+  updateCount(){
+    this.count.set(this.count()+1)
   }
 }
