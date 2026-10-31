@@ -1,4 +1,4 @@
-import { Component, effect, signal } from '@angular/core';
+import { Component, computed, effect, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { Profile } from './profile/profile';
 
@@ -85,26 +85,55 @@ import { Profile } from './profile/profile';
 // }
 
 
-// Signals 
-export class App {
-  data = 10;
-  count = signal(0)
+// // Signals 
+// export class App {
+//   data = 10;
+//   count = signal(0)
 
+//   constructor(){
+//     effect(()=>{
+//       console.log("This is data ", this.data)
+//       console.log("This is count ", this.count())
+//       if(this.count()==10){
+//         this.count.set(0)
+//       }
+//     })
+//   }
+
+//   updateData(){
+//     this.data++
+//   }
+
+//   updateCount(){
+//     this.count.set(this.count()+1)
+//   }
+// }
+
+// Computed Signals in Angular
+// export class App {
+//   height = 100;
+//   width = 20;
+//   area = this.height * this.width;
+
+//   handleHeight(){
+//     // this.height += 10;
+//     this.height = this.height + 10;
+//     this.area = this.height * this.width;
+//   }
+// }
+
+export class App {
+  height = signal(100);
+  width = signal(20);
+  area = computed(()=> this.height()*this.width())
   constructor(){
     effect(()=>{
-      console.log("This is data ", this.data)
-      console.log("This is count ", this.count())
-      if(this.count()==10){
-        this.count.set(0)
-      }
+      // console.log("area is : ", this.area());
+      console.log("is updating?");
     })
   }
 
-  updateData(){
-    this.data++
-  }
-
-  updateCount(){
-    this.count.set(this.count()+1)
+  handleHeight(){
+    this.height.set(this.height() + 10);
   }
 }
