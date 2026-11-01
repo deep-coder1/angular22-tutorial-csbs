@@ -61,7 +61,16 @@
 
 
 <!-- Computed Signals in Angular -->
-<h1>Computed Signals</h1>
+<!-- <h1>Computed Signals</h1>
 <h2>Area: {{area()}}</h2>
 <h2>Height: {{height()}}</h2>
-<button (click)="handleHeight()">Update Height</button>
+<button (click)="handleHeight()">Update Height</button> -->
+
+
+<!-- Effect in Angular -->
+<h1>Effect</h1>
+<h2 [style.color]="color">{{speed()}}</h2>
+<button (click)="increaseSpeed()">Increase Speed</button>
+<hr />
+<h2>{{fruit()}}</h2>
+<button (click)="changeFruit()">Change Fruit</button>
