@@ -1,4 +1,4 @@
-import { Component, computed, effect, signal } from '@angular/core';
+import { Component, computed, effect, Signal, signal, WritableSignal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { Profile } from './profile/profile';
 
@@ -139,36 +139,50 @@ import { Profile } from './profile/profile';
 // }
 
 
-// Effect in Angular
+// // Effect in Angular
+// export class App {
+//   speed = signal(0)
+//   fruit=signal("apple")
+//   color="black"
+
+//   constructor(){
+//     effect(()=>{
+//       if(this.speed()>0 && this.speed()<80){
+//         this.color="green"
+//       }
+//       if(this.speed()>80 && this.speed()<120){
+//         this.color="orange"
+//       }
+//       if(this.speed()>=120){
+//         this.color="red"
+//       }
+//       console.log("speed : ", this.speed());
+//     })
+
+//     effect(()=> {
+//       console.log(this.fruit())
+//     })
+//   }
+
+//   increaseSpeed(){
+//     this.speed.set(this.speed()+10)
+//   }
+
+//   changeFruit(){
+//     this.fruit.set('banana')
+//   }
+// }
+
+// Angular Signals Data Types
 export class App {
-  speed = signal(0)
-  fruit=signal("apple")
-  color="black"
+  data:WritableSignal<string | number | boolean> = signal<string | number | boolean>("deepak");
+  // speed = computed(()=> this.data() === "deepak" ? 100 : 0);
+  users:WritableSignal<string[]> = signal<string[]>(["deepak", "thakur", "ndktbd"]);
+  speed:Signal<number> = computed<number>(()=>90)
 
-  constructor(){
-    effect(()=>{
-      if(this.speed()>0 && this.speed()<80){
-        this.color="green"
-      }
-      if(this.speed()>80 && this.speed()<120){
-        this.color="orange"
-      }
-      if(this.speed()>=120){
-        this.color="red"
-      }
-      console.log("speed : ", this.speed());
-    })
-
-    effect(()=> {
-      console.log(this.fruit())
-    })
-  }
-
-  increaseSpeed(){
-    this.speed.set(this.speed()+10)
-  }
-
-  changeFruit(){
-    this.fruit.set('banana')
+  handleData() {
+    // this.data.set("thakur");
+    this.users.update((item)=>[...item, "sandeep"])
+    console.log(this.users());
   }
 }
