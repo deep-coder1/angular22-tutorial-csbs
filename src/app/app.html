@@ -76,6 +76,13 @@
 <button (click)="changeFruit()">Change Fruit</button> -->
 
 <!-- Angular Signals Data Types  -->
-<h1>Angular Signals Data Types</h1>
+<!-- <h1>Angular Signals Data Types</h1>
 <button (click)="handleData()">Update Data</button>
+-->
 
+<!-- Get and Set Values with Input Fields -->
+<h1>Get and Set Values with Input Fields</h1>
+<p>Value: {{name()}}</p>
+<!-- <input type="text" [value]="name()" (input)="name.set($event.target.value)"> -->
+<input type="text" [value]="name()" (input)="setValue($event.target.value)">
+<button (click)="resetValue()">Reset Value</button>
