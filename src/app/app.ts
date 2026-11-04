@@ -1,13 +1,16 @@
 import { Component, computed, effect, Signal, signal, WritableSignal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { Profile } from './profile/profile';
+import { UserData } from './user-data/user-data';
+import { AdminData } from './admin-data/admin-data';
 
 @Component({
-  imports: [RouterOutlet, Profile],
+  imports: [RouterOutlet, Profile, UserData, AdminData],
   selector: 'app-root',
-  styleUrl: './app.css',
+  // styleUrl: './app.css',
   templateUrl: './app.html',
   // template:`<h1>Inline Template {{name}}<h1>`,
+  styleUrls:["./app.css","./common.css"],
 })
 // export class App {
 //   name="Deepak Thakur"
@@ -187,15 +190,20 @@ import { Profile } from './profile/profile';
 //   }
 // }
 
-// Get and Set Values with Input Fields
-export class App {
-  name:WritableSignal<string> = signal('')
+// // Get and Set Values with Input Fields
+// export class App {
+//   name:WritableSignal<string> = signal('')
 
-  resetValue(){
-    this.name.set('Deepak Thakur')
-  }
+//   resetValue(){
+//     this.name.set('Deepak Thakur')
+//   }
 
-  setValue(val:string){
-    this.name.set(val)
-  }
+//   setValue(val:string){
+//     this.name.set(val)
+//   }
+// }
+
+// Style Options and Rules in Angular 22
+export class App{
+
 }
