@@ -7,10 +7,10 @@ import { AdminData } from './admin-data/admin-data';
 @Component({
   imports: [RouterOutlet, Profile, UserData, AdminData],
   selector: 'app-root',
-  // styleUrl: './app.css',
+  styleUrl: './app.css',
   templateUrl: './app.html',
   // template:`<h1>Inline Template {{name}}<h1>`,
-  styleUrls:["./app.css","./common.css"],
+  // styleUrls:["./app.css","./common.css"],
 })
 // export class App {
 //   name="Deepak Thakur"
@@ -203,7 +203,23 @@ import { AdminData } from './admin-data/admin-data';
 //   }
 // }
 
-// Style Options and Rules in Angular 22
-export class App{
+// // Style Options and Rules in Angular 22
+// export class App{
 
+// }
+
+// Angular 22 Control Flow Statements
+export class App{
+  isLogin = signal(false)
+  show = signal(true)
+  status = signal('error')
+
+  handleLogin(status:boolean){
+    this.isLogin.set(status)
+  }
+
+  handleStatus(event:Event){
+    let target = event.target as HTMLSelectElement;
+    this.status.set(target.value)
+  }
 }
