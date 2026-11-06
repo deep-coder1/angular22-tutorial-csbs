@@ -59,13 +59,11 @@
 <button (click)="updateCount()">Update Count</button>
 <h2>Signal: {{count()}}</h2> -->
 
-
 <!-- Computed Signals in Angular -->
 <!-- <h1>Computed Signals</h1>
 <h2>Area: {{area()}}</h2>
 <h2>Height: {{height()}}</h2>
 <button (click)="handleHeight()">Update Height</button> -->
-
 
 <!-- Effect in Angular -->
 <!-- <h1>Effect</h1>
@@ -99,7 +97,7 @@
 <h2 class="heading2">Heading 2</h2> -->
 
 <!-- Angular 22 Control Flow Statements -->
-<h1>Control Flow Statement</h1>
+<!-- <h1>Control Flow Statement</h1>
 <div>
     @if (isLogin()) {
         <span>Welcome User</span>
@@ -134,4 +132,32 @@
     <span style="color: green;">Success</span>
 } @else if (status()=='error'){
     <span style="color: red;">Error</span>
-}
+} -->
+
+<!-- @for and For Loop in Angular  -->
+<h1>for | Control Flow Statement</h1>
+
+<div>
+  <ul>
+    @for (user of users(); track user) {
+      <li>{{ user }}</li>
+    }
+  </ul>
+
+  <hr />
+
+  <ul>
+    @for (user of usersDetail(); track user.id) {
+      <li [style.backgroundColor]="$odd? 'lightblue' : 'lightgreen'">
+        {{ $index + 1 }} | {{ user.name }} | {{ user.surname }} | {{ user.email }} |
+        @if ($first) {
+          <span style="color: red">Admin</span>
+        }
+        @if ($last) {
+          <span style="color: orange">Guest</span>
+        } | 
+        <span>@if($count==$index+1){<span><b>Total Users</b> {{$count}} </span>}</span>
+      </li>
+    }
+  </ul>
+</div>

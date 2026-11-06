@@ -208,18 +208,29 @@ import { AdminData } from './admin-data/admin-data';
 
 // }
 
-// Angular 22 Control Flow Statements
+// // Angular 22 Control Flow Statements
+// export class App{
+//   isLogin = signal(false)
+//   show = signal(true)
+//   status = signal('error')
+
+//   handleLogin(status:boolean){
+//     this.isLogin.set(status)
+//   }
+
+//   handleStatus(event:Event){
+//     let target = event.target as HTMLSelectElement;
+//     this.status.set(target.value)
+//   }
+// }
+
+// @for and For Loop in Angular 
 export class App{
-  isLogin = signal(false)
-  show = signal(true)
-  status = signal('error')
-
-  handleLogin(status:boolean){
-    this.isLogin.set(status)
-  }
-
-  handleStatus(event:Event){
-    let target = event.target as HTMLSelectElement;
-    this.status.set(target.value)
-  }
+  users = signal(["Deepak", "Sam", "Peter", "Bruce"])
+  usersDetail = signal([
+    {id:1, name:"Deepak", surname:"Thakur", email:"deepak@example.com"},
+    {id:2, name:"Sam", surname:"Singh", email:"sam@test.com"},
+    {id:2, name:"Peter", surname:"Rana", email:"pater@test.com"},
+    {id:2, name:"Bruce", surname:"Yadav", email:"rahubruce@test.com"},
+  ])
 }
