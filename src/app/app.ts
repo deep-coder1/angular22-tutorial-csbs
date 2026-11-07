@@ -224,13 +224,22 @@ import { AdminData } from './admin-data/admin-data';
 //   }
 // }
 
-// @for and For Loop in Angular 
+// // @for and For Loop in Angular 
+// export class App{
+//   users = signal(["Deepak", "Sam", "Peter", "Bruce"])
+//   usersDetail = signal([
+//     {id:1, name:"Deepak", surname:"Thakur", email:"deepak@example.com"},
+//     {id:2, name:"Sam", surname:"Singh", email:"sam@test.com"},
+//     {id:2, name:"Peter", surname:"Rana", email:"pater@test.com"},
+//     {id:2, name:"Bruce", surname:"Yadav", email:"rahubruce@test.com"},
+//   ])
+// }
+
+// @switch and Switch Statement in Angular 
 export class App{
-  users = signal(["Deepak", "Sam", "Peter", "Bruce"])
-  usersDetail = signal([
-    {id:1, name:"Deepak", surname:"Thakur", email:"deepak@example.com"},
-    {id:2, name:"Sam", surname:"Singh", email:"sam@test.com"},
-    {id:2, name:"Peter", surname:"Rana", email:"pater@test.com"},
-    {id:2, name:"Bruce", surname:"Yadav", email:"rahubruce@test.com"},
-  ])
+  status = signal("notStarted")
+  handleSwitch(event:Event){
+    let target = event.target as HTMLSelectElement;
+    this.status.set(target.value)
+  }
 }
