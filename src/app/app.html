@@ -164,9 +164,9 @@
 
 
 <!-- @switch and Switch Statement in Angular  -->
-<h1>Switch | Control Flow Statement in Angular </h1>
+<!-- <h1>Switch | Control Flow Statement in Angular </h1> -->
 <!-- <select name="" id="" (change)="status.set($event.target.value)"> -->
-<select name="" id="" (change)="handleSwitch($event)">
+<!-- <select name="" id="" (change)="handleSwitch($event)">
     <option value="notStarted">Not Started</option>
     <option value="progress">In Progress</option>
     <option value="success">Success</option>
@@ -188,4 +188,13 @@
     @default{
         <span style="color: red;">Error</span>
     }
-}
+} -->
+
+<!-- Two-Way Data Binding   -->
+<h1>Two-Way Data Binding  </h1>
+<h2>{{name()}}</h2>
+<input type="text" [value]="name()" (input)="name.set($event.target.value)">
+<hr>
+
+<h2>{{age}}</h2>
+<input type="number" [value]="age">

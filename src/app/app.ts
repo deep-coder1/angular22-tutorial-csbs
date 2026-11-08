@@ -235,11 +235,17 @@ import { AdminData } from './admin-data/admin-data';
 //   ])
 // }
 
-// @switch and Switch Statement in Angular 
+// // @switch and Switch Statement in Angular 
+// export class App{
+//   status = signal("notStarted")
+//   handleSwitch(event:Event){
+//     let target = event.target as HTMLSelectElement;
+//     this.status.set(target.value)
+//   }
+// }
+
+// Two-Way Data Binding  
 export class App{
-  status = signal("notStarted")
-  handleSwitch(event:Event){
-    let target = event.target as HTMLSelectElement;
-    this.status.set(target.value)
-  }
+  name = signal("Deepak Thakur")
+  age=25
 }
