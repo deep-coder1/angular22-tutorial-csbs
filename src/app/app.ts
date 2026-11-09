@@ -3,9 +3,10 @@ import { RouterOutlet } from '@angular/router';
 import { Profile } from './profile/profile';
 import { UserData } from './user-data/user-data';
 import { AdminData } from './admin-data/admin-data';
+import { FormsModule } from '@angular/forms';
 
 @Component({
-  imports: [RouterOutlet, Profile, UserData, AdminData],
+  imports: [RouterOutlet, Profile, UserData, AdminData, FormsModule],
   selector: 'app-root',
   styleUrl: './app.css',
   templateUrl: './app.html',
@@ -246,6 +247,31 @@ import { AdminData } from './admin-data/admin-data';
 
 // Two-Way Data Binding  
 export class App{
-  name = signal("Deepak Thakur")
-  age=25
+  // name = signal("Deepak Thakur")
+  // age=25
+
+  userData=signal({
+    name:"deepak thakur",
+    age:14,
+    email:"deepak@test.com"
+  })
+
+  // updateUserData(key:string, val:string){
+  //   if(key=='name'){
+  //     this.userData.update((item)=>({...item,name:val}))
+  //   }
+
+  //   if(key=='age'){
+  //     this.userData.update((item)=>({...item,age:parseInt(val)}))
+  //   }
+
+  //   if(key=='email'){
+  //     this.userData.update((item)=>({...item,email:val}))
+  //   }
+  // }
+
+    updateUserData(key:string, val:string){
+      this.userData.update((item)=>({...item,key:val}))
+    }
 }
+

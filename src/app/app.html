@@ -162,7 +162,6 @@
   </ul>
 </div> -->
 
-
 <!-- @switch and Switch Statement in Angular  -->
 <!-- <h1>Switch | Control Flow Statement in Angular </h1> -->
 <!-- <select name="" id="" (change)="status.set($event.target.value)"> -->
@@ -191,10 +190,35 @@
 } -->
 
 <!-- Two-Way Data Binding   -->
-<h1>Two-Way Data Binding  </h1>
+<!-- <h1>Two-Way Data Binding  </h1>
 <h2>{{name()}}</h2>
 <input type="text" [value]="name()" (input)="name.set($event.target.value)">
-<hr>
+<hr> -->
 
-<h2>{{age}}</h2>
-<input type="number" [value]="age">
+<!-- <h2>{{age}}</h2> -->
+<!-- <input type="number" [value]="age" [(ngModel)]="age" > -->
+<!-- <input type="number" [(ngModel)]="age" > -->
+<!-- <input type="text" [ngModel]="age" (ngModelChange)="age = $event"> -->
+
+<h2>{{ userData().name }}</h2>
+<input
+  type="text"
+  [value]="userData().name"
+  (input)="updateUserData('name', $event.target.value)"
+/>
+
+<hr>
+<h2>{{ userData().age }}</h2>
+<input
+  type="text"
+  [value]="userData().age"
+  (input)="updateUserData('age', $event.target.value)"
+/>
+
+<hr>
+<h2>{{ userData().email }}</h2>
+<input
+  type="text"
+  [value]="userData().email"
+  (input)="updateUserData('email', $event.target.value)"
+/>
