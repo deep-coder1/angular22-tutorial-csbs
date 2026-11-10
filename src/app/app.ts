@@ -245,33 +245,58 @@ import { FormsModule } from '@angular/forms';
 //   }
 // }
 
-// Two-Way Data Binding  
-export class App{
-  // name = signal("Deepak Thakur")
-  // age=25
+// // Two-Way Data Binding  
+// export class App{
+//   // name = signal("Deepak Thakur")
+//   // age=25
 
-  userData=signal({
-    name:"deepak thakur",
-    age:14,
+//   userData=signal({
+//     name:"deepak thakur",
+//     age:14,
+//     email:"deepak@test.com"
+//   })
+
+//   // updateUserData(key:string, val:string){
+//   //   if(key=='name'){
+//   //     this.userData.update((item)=>({...item,name:val}))
+//   //   }
+
+//   //   if(key=='age'){
+//   //     this.userData.update((item)=>({...item,age:parseInt(val)}))
+//   //   }
+
+//   //   if(key=='email'){
+//   //     this.userData.update((item)=>({...item,email:val}))
+//   //   }
+//   // }
+
+//     updateUserData(key:string, val:string){
+//       this.userData.update((item)=>({...item,key:val}))
+//     }
+// }
+
+// Angular Signals Getter and Setter 
+export class App{
+  userName = signal("Deepak Thakur")
+  userData = signal({
+    college:"AISECT University",
     email:"deepak@test.com"
   })
 
-  // updateUserData(key:string, val:string){
-  //   if(key=='name'){
-  //     this.userData.update((item)=>({...item,name:val}))
-  //   }
+  get uName(){
+    return this.userName();
+  }
 
-  //   if(key=='age'){
-  //     this.userData.update((item)=>({...item,age:parseInt(val)}))
-  //   }
+  set uName(val:string){
+    this.userName.set(val)
+  }
 
-  //   if(key=='email'){
-  //     this.userData.update((item)=>({...item,email:val}))
-  //   }
-  // }
+  get userCollege(){
+    return this.userData().college
+  }
 
-    updateUserData(key:string, val:string){
-      this.userData.update((item)=>({...item,key:val}))
-    }
+  set userCollege(val){
+    this.userData.update((item)=>({...item,college:val}))
+  }
+
 }
-

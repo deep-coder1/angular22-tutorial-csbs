@@ -200,7 +200,7 @@
 <!-- <input type="number" [(ngModel)]="age" > -->
 <!-- <input type="text" [ngModel]="age" (ngModelChange)="age = $event"> -->
 
-<h2>{{ userData().name }}</h2>
+<!-- <h2>{{ userData().name }}</h2>
 <input
   type="text"
   [value]="userData().name"
@@ -221,4 +221,14 @@
   type="text"
   [value]="userData().email"
   (input)="updateUserData('email', $event.target.value)"
-/>
+/> -->
+
+
+<!-- Angular Signals Getter and Setter  -->
+<h1>Angular Signals Getter and Setter </h1>
+<h2>{{uName}}</h2>
+<input type="text" [(ngModel)]="uName" >
+
+<hr>
+<h2>{{userCollege  }}</h2>
+<input type="text" [(ngModel)]="userCollege" >
