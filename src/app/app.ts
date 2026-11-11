@@ -24,7 +24,7 @@ import { FormsModule } from '@angular/forms';
 //   }
 // }
 
-// Events Binding 
+// Events Binding
 // export class App {
 //   // callMe(){
 //   //   alert("Hello Angular 22")
@@ -45,14 +45,14 @@ import { FormsModule } from '@angular/forms';
 //   }
 // }
 
-// // Events 
+// // Events
 // export class App {
 //   handleEvent(eventName:string){
 //     console.log(eventName);
 //   }
 // }
 
-// // Data Types in Angular 
+// // Data Types in Angular
 // export class App {
 //   data:any = 20
 
@@ -76,20 +76,18 @@ import { FormsModule } from '@angular/forms';
 //   }
 // }
 
-
-// Angular Property Binding 
+// Angular Property Binding
 // export class App {
 //   btnDisable=false;
 //   inputReadonly=false;
 //   url="https://dac.digital/wp-content/uploads/2023/05/angular-logo-1-1920x1920-optimized.png"
-  
+
 //   toggle(){
 //     this.btnDisable=!this.btnDisable;
 //   }
 // }
 
-
-// // Signals 
+// // Signals
 // export class App {
 //   data = 10;
 //   count = signal(0)
@@ -141,7 +139,6 @@ import { FormsModule } from '@angular/forms';
 //     this.height.set(this.height() + 10);
 //   }
 // }
-
 
 // // Effect in Angular
 // export class App {
@@ -225,7 +222,7 @@ import { FormsModule } from '@angular/forms';
 //   }
 // }
 
-// // @for and For Loop in Angular 
+// // @for and For Loop in Angular
 // export class App{
 //   users = signal(["Deepak", "Sam", "Peter", "Bruce"])
 //   usersDetail = signal([
@@ -236,7 +233,7 @@ import { FormsModule } from '@angular/forms';
 //   ])
 // }
 
-// // @switch and Switch Statement in Angular 
+// // @switch and Switch Statement in Angular
 // export class App{
 //   status = signal("notStarted")
 //   handleSwitch(event:Event){
@@ -245,7 +242,7 @@ import { FormsModule } from '@angular/forms';
 //   }
 // }
 
-// // Two-Way Data Binding  
+// // Two-Way Data Binding
 // export class App{
 //   // name = signal("Deepak Thakur")
 //   // age=25
@@ -275,28 +272,55 @@ import { FormsModule } from '@angular/forms';
 //     }
 // }
 
-// Angular Signals Getter and Setter 
-export class App{
-  userName = signal("Deepak Thakur")
-  userData = signal({
-    college:"AISECT University",
-    email:"deepak@test.com"
-  })
+// Angular Signals Getter and Setter
+// export class App{
+//   userName = signal("Deepak Thakur")
+//   userData = signal({
+//     college:"AISECT University",
+//     email:"deepak@test.com"
+//   })
 
-  get uName(){
-    return this.userName();
+//   get uName(){
+//     return this.userName();
+//   }
+
+//   set uName(val:string){
+//     this.userName.set(val)
+//   }
+
+//   get userCollege(){
+//     return this.userData().college
+//   }
+
+//   set userCollege(val){
+//     this.userData.update((item)=>({...item,college:val}))
+//   }
+
+// }
+
+// To-Do List with Signals
+export class App {
+  tasks = signal([{ id: 0, title: 'Team lunch', completed: false }]);
+  title = signal('');
+
+  addTask() {
+    // // console.log("Title: ", this.title())
+    // this.tasks.update((item)=> (
+    //   [...item,{id:this.tasks().length,title:this.title(),completed:false}]
+    // ))
+    // this.title.set('');
+    
+    if (this.title()) {
+      // console.log("Title: ", this.title())
+      this.tasks.update((item) => [
+        ...item,
+        { id: this.tasks().length, title: this.title(), completed: false },
+      ]);
+      this.title.set('');
+    }
   }
 
-  set uName(val:string){
-    this.userName.set(val)
+  deleteTask(id: number) {
+    this.tasks.update((tasks) => tasks.filter((task) => task.id != id));
   }
-
-  get userCollege(){
-    return this.userData().college
-  }
-
-  set userCollege(val){
-    this.userData.update((item)=>({...item,college:val}))
-  }
-
 }
