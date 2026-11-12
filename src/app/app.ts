@@ -4,9 +4,10 @@ import { Profile } from './profile/profile';
 import { UserData } from './user-data/user-data';
 import { AdminData } from './admin-data/admin-data';
 import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 
 @Component({
-  imports: [RouterOutlet, Profile, UserData, AdminData, FormsModule],
+  imports: [RouterOutlet, Profile, UserData, AdminData, FormsModule, CommonModule],
   selector: 'app-root',
   styleUrl: './app.css',
   templateUrl: './app.html',
@@ -298,29 +299,37 @@ import { FormsModule } from '@angular/forms';
 
 // }
 
-// To-Do List with Signals
-export class App {
-  tasks = signal([{ id: 0, title: 'Team lunch', completed: false }]);
-  title = signal('');
+// // To-Do List with Signals
+// export class App {
+//   tasks = signal([{ id: 0, title: 'Team lunch', completed: false }]);
+//   title = signal('');
 
-  addTask() {
-    // // console.log("Title: ", this.title())
-    // this.tasks.update((item)=> (
-    //   [...item,{id:this.tasks().length,title:this.title(),completed:false}]
-    // ))
-    // this.title.set('');
+//   addTask() {
+//     // // console.log("Title: ", this.title())
+//     // this.tasks.update((item)=> (
+//     //   [...item,{id:this.tasks().length,title:this.title(),completed:false}]
+//     // ))
+//     // this.title.set('');
     
-    if (this.title()) {
-      // console.log("Title: ", this.title())
-      this.tasks.update((item) => [
-        ...item,
-        { id: this.tasks().length, title: this.title(), completed: false },
-      ]);
-      this.title.set('');
-    }
-  }
+//     if (this.title()) {
+//       // console.log("Title: ", this.title())
+//       this.tasks.update((item) => [
+//         ...item,
+//         { id: this.tasks().length, title: this.title(), completed: false },
+//       ]);
+//       this.title.set('');
+//     }
+//   }
 
-  deleteTask(id: number) {
-    this.tasks.update((tasks) => tasks.filter((task) => task.id != id));
-  }
+//   deleteTask(id: number) {
+//     this.tasks.update((tasks) => tasks.filter((task) => task.id != id));
+//   }
+// }
+
+
+// Directives in Angular 22
+export class App{
+  isLogin = signal(true)
+  users = signal(["deepak", "sam", "peter", "bruce"])
+  pColor="red"
 }

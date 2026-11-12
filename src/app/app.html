@@ -233,7 +233,7 @@
 <input type="text" [(ngModel)]="userCollege" > -->
 
 <!-- To-Do List with Signals  -->
-<h1>To-Do List with Signals</h1>
+<!-- <h1>To-Do List with Signals</h1>
 <input
   type="text"
   [value]="title()"
@@ -250,4 +250,18 @@
   } @empty {
     <span>No Task Found</span>
   }
-</ul>
+</ul> -->
+
+
+<!-- Directives in Angular 22 -->
+<h1>Directives in Angular 22</h1>
+<h2 *ngIf="isLogin()">Welcome User</h2>
+
+<div>
+  <ul *ngFor="let user of users()">
+    <li>{{user}}</li>
+  </ul>
+</div>
+
+<p [ngStyle]="{color:pColor}">Hello visitors</p>
+
