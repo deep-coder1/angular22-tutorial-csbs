@@ -336,7 +336,7 @@ import { CommonModule } from '@angular/common';
 // }
 
 // ngFor Directive in Angular 
-// CommonModule --> Import necessary
+CommonModule --> Import necessary
 export class App{
   students = ["Deepak", "Sam", "Peter", "Bruce", "Rahul", "Sandeep", ]
 
@@ -347,4 +347,11 @@ export class App{
     {id:4, name:"Bruce", age:40, email:"bruce@test.com"}
   ])
 
+  // Nested ngFor loop Directive --> For practice
+  member = signal([
+    {id:1, name:"Deepak", skills:["Angular", "React", "Vue"]},
+    {id:2, name:"Sam", skills:["Java", "Python", "C++"]},
+  ])
+
 }
+

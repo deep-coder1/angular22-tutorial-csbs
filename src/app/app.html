@@ -277,4 +277,15 @@
     <strong>{{ studentData.name }}</strong> - Age: {{ studentData.age }}, Email: {{ studentData.email }}
   </li>
 </ul>
+<br>
+
+<!-- Nested ngFor loop Directive for practice -->
+<ul>
+  <li *ngFor="let m of member()">
+    <strong>{{ m.name }}</strong>
+    <ul>
+      <li *ngFor="let skill of m.skills">{{ skill }}</li>
+    </ul>
+  </li>
+</ul>
 
