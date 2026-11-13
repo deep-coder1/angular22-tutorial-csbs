@@ -254,7 +254,7 @@
 
 
 <!-- Directives in Angular 22 -->
-<h1>Directives in Angular 22</h1>
+<!-- <h1>Directives in Angular 22</h1>
 <h2 *ngIf="isLogin()">Welcome User</h2>
 
 <div>
@@ -263,5 +263,18 @@
   </ul>
 </div>
 
-<p [ngStyle]="{color:pColor}">Hello visitors</p>
+<p [ngStyle]="{color:pColor}">Hello visitors</p> -->
+
+<!-- ngFor Directive in Angular  -->
+<h1>ngFor Directive in Angular </h1>
+<ul>
+  <li *ngFor="let student of students">{{student}}</li>
+</ul>
+<br>
+
+<ul>
+  <li *ngFor="let studentData of studentsData()">
+    <strong>{{ studentData.name }}</strong> - Age: {{ studentData.age }}, Email: {{ studentData.email }}
+  </li>
+</ul>
 

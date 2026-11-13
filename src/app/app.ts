@@ -327,9 +327,24 @@ import { CommonModule } from '@angular/common';
 // }
 
 
-// Directives in Angular 22
+// // Directives in Angular 22
+// CommonModule --> Import necessary
+// export class App{
+//   isLogin = signal(true)
+//   users = signal(["deepak", "sam", "peter", "bruce"])
+//   pColor="red"
+// }
+
+// ngFor Directive in Angular 
+// CommonModule --> Import necessary
 export class App{
-  isLogin = signal(true)
-  users = signal(["deepak", "sam", "peter", "bruce"])
-  pColor="red"
+  students = ["Deepak", "Sam", "Peter", "Bruce", "Rahul", "Sandeep", ]
+
+  studentsData = signal([
+    {id:1, name:"Deepak", age:25, email:"deepak@test.com"},
+    {id:2, name:"Sam", age:30, email:"sam@test.com"},
+    {id:3, name:"Peter", age:35, email:"peter@test.com"},
+    {id:4, name:"Bruce", age:40, email:"bruce@test.com"}
+  ])
+
 }
