@@ -266,7 +266,7 @@
 <p [ngStyle]="{color:pColor}">Hello visitors</p> -->
 
 <!-- ngFor Directive in Angular  -->
-<h1>ngFor Directive in Angular </h1>
+<!-- <h1>ngFor Directive in Angular </h1>
 <ul>
   <li *ngFor="let student of students">{{student}}</li>
 </ul>
@@ -279,7 +279,6 @@
 </ul>
 <br>
 
-<!-- Nested ngFor loop Directive for practice -->
 <ul>
   <li *ngFor="let m of member()">
     <strong>{{ m.name }}</strong>
@@ -287,5 +286,23 @@
       <li *ngFor="let skill of m.skills">{{ skill }}</li>
     </ul>
   </li>
-</ul>
+</ul> -->
 
+<!-- ngIf Directive in Angular  -->
+<h1>ngIf Directive in Angular </h1>
+<div *ngIf="login; else elseBlock" >Welcome, User! <a href="/logout">Logout</a></div>
+<ng-template #elseBlock>
+  <div><a href="/login">Please log in to continue.</a></div>
+</ng-template>
+
+<br>
+<div *ngIf="block==0">
+  <p>This is Block 1</p>
+</div>
+<div *ngIf="block==1">
+  <p>This is Block 2</p>
+</div>
+<div *ngIf="block==2">
+  <p>This is Block 3</p>
+</div>
+<button (click)="updateBlock()">Update Block</button>

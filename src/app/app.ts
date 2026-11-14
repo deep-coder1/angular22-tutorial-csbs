@@ -336,22 +336,33 @@ import { CommonModule } from '@angular/common';
 // }
 
 // ngFor Directive in Angular 
-CommonModule --> Import necessary
+// CommonModule --> Import necessary
+// export class App{
+//   students = ["Deepak", "Sam", "Peter", "Bruce", "Rahul", "Sandeep", ]
+
+//   studentsData = signal([
+//     {id:1, name:"Deepak", age:25, email:"deepak@test.com"},
+//     {id:2, name:"Sam", age:30, email:"sam@test.com"},
+//     {id:3, name:"Peter", age:35, email:"peter@test.com"},
+//     {id:4, name:"Bruce", age:40, email:"bruce@test.com"}
+//   ])
+
+//   // Nested ngFor loop Directive
+//   member = signal([
+//     {id:1, name:"Deepak", skills:["Angular", "React", "Vue"]},
+//     {id:2, name:"Sam", skills:["Java", "Python", "C++"]},
+//   ])
+
+// }
+
+// ngIf Directive in Angular 
 export class App{
-  students = ["Deepak", "Sam", "Peter", "Bruce", "Rahul", "Sandeep", ]
+  login = false;
+  block = 0;
 
-  studentsData = signal([
-    {id:1, name:"Deepak", age:25, email:"deepak@test.com"},
-    {id:2, name:"Sam", age:30, email:"sam@test.com"},
-    {id:3, name:"Peter", age:35, email:"peter@test.com"},
-    {id:4, name:"Bruce", age:40, email:"bruce@test.com"}
-  ])
-
-  // Nested ngFor loop Directive --> For practice
-  member = signal([
-    {id:1, name:"Deepak", skills:["Angular", "React", "Vue"]},
-    {id:2, name:"Sam", skills:["Java", "Python", "C++"]},
-  ])
-
+  updateBlock() {
+    // this.block = (this.block % 3) + 1;
+    // this.block = this.block + 1;
+    this.block++;
+  }
 }
-
