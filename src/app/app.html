@@ -252,7 +252,6 @@
   }
 </ul> -->
 
-
 <!-- Directives in Angular 22 -->
 <!-- <h1>Directives in Angular 22</h1>
 <h2 *ngIf="isLogin()">Welcome User</h2>
@@ -289,7 +288,7 @@
 </ul> -->
 
 <!-- ngIf Directive in Angular  -->
-<h1>ngIf Directive in Angular </h1>
+<!-- <h1>ngIf Directive in Angular </h1>
 <div *ngIf="login; else elseBlock" >Welcome, User! <a href="/logout">Logout</a></div>
 <ng-template #elseBlock>
   <div><a href="/login">Please log in to continue.</a></div>
@@ -305,4 +304,21 @@
 <div *ngIf="block==2">
   <p>This is Block 3</p>
 </div>
-<button (click)="updateBlock()">Update Block</button>
+<button (click)="updateBlock()">Update Block</button> -->
+
+<!-- ngSwitch Directive in Angular -->
+<h1>ngSwitch Directive in Angular</h1>
+<button (click)="changeColor('red')">Red</button>
+<button (click)="changeColor('green')">Green</button>
+<button (click)="changeColor('yellow')">Yellow</button>
+<button (click)="changeColor('blue')">Blue</button>
+<button (click)="changeColor('pink')">Pink</button>
+<a href="#" (click)="changeColor('')">Default</a>
+<div [ngSwitch]="color">
+  <h2 *ngSwitchCase="'red'" style="background-color: red">Red Color</h2>
+  <h2 *ngSwitchCase="'green'" style="background-color: green">Green Color</h2>
+  <h2 *ngSwitchCase="'yellow'" style="background-color: yellow">yellow Color</h2>
+  <h2 *ngSwitchCase="'blue'" style="background-color: blue">blue Color</h2>
+  <h2 *ngSwitchCase="'pink'" style="background-color: pink">pink Color</h2>
+  <h2 *ngSwitchDefault style="background-color: gray">Default Color</h2>
+</div>

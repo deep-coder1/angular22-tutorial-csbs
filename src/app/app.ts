@@ -4,10 +4,10 @@ import { Profile } from './profile/profile';
 import { UserData } from './user-data/user-data';
 import { AdminData } from './admin-data/admin-data';
 import { FormsModule } from '@angular/forms';
-import { CommonModule } from '@angular/common';
+import { CommonModule, NgSwitch, NgSwitchCase, NgSwitchDefault } from '@angular/common';
 
 @Component({
-  imports: [RouterOutlet, Profile, UserData, AdminData, FormsModule, CommonModule],
+  imports: [RouterOutlet, Profile, UserData, AdminData, FormsModule, CommonModule, NgSwitchCase, NgSwitch, NgSwitchDefault],
   selector: 'app-root',
   styleUrl: './app.css',
   templateUrl: './app.html',
@@ -355,14 +355,25 @@ import { CommonModule } from '@angular/common';
 
 // }
 
-// ngIf Directive in Angular 
-export class App{
-  login = false;
-  block = 0;
+// // ngIf Directive in Angular 
+// export class App{
+//   login = false;
+//   block = 0;
 
-  updateBlock() {
-    // this.block = (this.block % 3) + 1;
-    // this.block = this.block + 1;
-    this.block++;
+//   updateBlock() {
+//     // this.block = (this.block % 3) + 1;
+//     // this.block = this.block + 1;
+//     this.block++;
+//   }
+// }
+
+// ngSwitch Directive in Angular
+// NgSwitchCase, NgSwitch, NgSwitchDefault imports important
+export class App{
+  color = "green"
+
+  changeColor(color:string){
+    this.color = color;
   }
 }
+
