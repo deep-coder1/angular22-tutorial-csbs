@@ -5,9 +5,10 @@ import { UserData } from './user-data/user-data';
 import { AdminData } from './admin-data/admin-data';
 import { FormsModule } from '@angular/forms';
 import { CommonModule, NgSwitch, NgSwitchCase, NgSwitchDefault } from '@angular/common';
+import { SearchBox } from './search-box/search-box';
 
 @Component({
-  imports: [RouterOutlet, Profile, UserData, AdminData, FormsModule, CommonModule, NgSwitchCase, NgSwitch, NgSwitchDefault],
+  imports: [RouterOutlet, Profile, UserData, AdminData, FormsModule, CommonModule, NgSwitchCase, NgSwitch, NgSwitchDefault, SearchBox],
   selector: 'app-root',
   styleUrl: './app.css',
   templateUrl: './app.html',
@@ -367,13 +368,18 @@ import { CommonModule, NgSwitch, NgSwitchCase, NgSwitchDefault } from '@angular/
 //   }
 // }
 
-// ngSwitch Directive in Angular
-// NgSwitchCase, NgSwitch, NgSwitchDefault imports important
-export class App{
-  color = "green"
+// // ngSwitch Directive in Angular
+// // NgSwitchCase, NgSwitch, NgSwitchDefault imports important
+// export class App{
+//   color = "green"
 
-  changeColor(color:string){
-    this.color = color;
-  }
+//   changeColor(color:string){
+//     this.color = color;
+//   }
+// }
+
+// Inline Component
+export class App{
+  nums=signal([0,1,2,3,4,5])
 }
 

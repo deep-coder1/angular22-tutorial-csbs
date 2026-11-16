@@ -307,7 +307,7 @@
 <button (click)="updateBlock()">Update Block</button> -->
 
 <!-- ngSwitch Directive in Angular -->
-<h1>ngSwitch Directive in Angular</h1>
+<!-- <h1>ngSwitch Directive in Angular</h1>
 <button (click)="changeColor('red')">Red</button>
 <button (click)="changeColor('green')">Green</button>
 <button (click)="changeColor('yellow')">Yellow</button>
@@ -321,4 +321,19 @@
   <h2 *ngSwitchCase="'blue'" style="background-color: blue">blue Color</h2>
   <h2 *ngSwitchCase="'pink'" style="background-color: pink">pink Color</h2>
   <h2 *ngSwitchDefault style="background-color: gray">Default Color</h2>
-</div>
+</div> -->
+
+<!-- Inline Component -->
+<!-- For create inline html and css file component -->
+<!-- ng g c search-box --inline-template --inline-style -->
+
+<!-- For create inline html not css file component -->
+<!-- ng g c name-box --inline-template -->
+
+<!-- For create inline css file not html file component -->
+<!-- ng g c button-box --inline-style -->
+
+<h1>Inline Component</h1>
+@for(n of nums(); track n){
+  <app-search-box></app-search-box>
+}
