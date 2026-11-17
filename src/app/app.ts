@@ -6,9 +6,10 @@ import { AdminData } from './admin-data/admin-data';
 import { FormsModule } from '@angular/forms';
 import { CommonModule, NgSwitch, NgSwitchCase, NgSwitchDefault } from '@angular/common';
 import { SearchBox } from './search-box/search-box';
+import { Child } from './child/child';
 
 @Component({
-  imports: [RouterOutlet, Profile, UserData, AdminData, FormsModule, CommonModule, NgSwitchCase, NgSwitch, NgSwitchDefault, SearchBox],
+  imports: [RouterOutlet, Profile, UserData, AdminData, FormsModule, CommonModule, NgSwitchCase, NgSwitch, NgSwitchDefault, SearchBox, Child],
   selector: 'app-root',
   styleUrl: './app.css',
   templateUrl: './app.html',
@@ -378,8 +379,26 @@ import { SearchBox } from './search-box/search-box';
 //   }
 // }
 
-// Inline Component
-export class App{
-  nums=signal([0,1,2,3,4,5])
-}
+// // Inline Component
+// export class App{
+//   nums=signal([0,1,2,3,4,5])
+// }
 
+// Pass Data from Parent to Child in Angular 
+export class App{
+  // userName = signal("deepak thakur")
+  users = signal(['deepak', 'peter', 'sam', 'bruce'])
+  newUser = signal('')
+
+  // addNewUser(){
+  //   if(this.newUser()){
+  //     this.users.update((item)=>[...item, this.newUser()])
+  //     this.newUser.set('')
+  //   }
+  // }
+
+  addNewUser(){
+    this.users.update((data)=>([...data, this.newUser()]))
+    this.newUser.set('');
+  }
+}

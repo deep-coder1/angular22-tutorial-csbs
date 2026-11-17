@@ -333,7 +333,22 @@
 <!-- For create inline css file not html file component -->
 <!-- ng g c button-box --inline-style -->
 
-<h1>Inline Component</h1>
-@for(n of nums(); track n){
+<!-- <h1>Inline Component</h1> -->
+<!-- @for(n of nums(); track n){
   <app-search-box></app-search-box>
+} -->
+
+<!-- Pass Data from Parent to Child in Angular  -->
+<h1>Pass Data from Parent to Child in Angular</h1>
+<!-- <app-child [userName]="userName()"></app-child> -->
+<!-- <h2>{{userName()}}</h2> -->
+<!-- <app-child [userName]="'deepak'"></app-child>
+<app-child [userName]="'thakur'"></app-child>
+<app-child [userName]="'peter'"></app-child> -->
+
+<input type="text" (input)="newUser.set($event.target.value)" placeholder="Enter new user name">
+<button (click)="addNewUser()">Add New User</button>
+
+@for (user of users(); track user) {
+  <app-child [userName]="user"></app-child>
 }
