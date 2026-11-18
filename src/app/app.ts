@@ -384,40 +384,39 @@ import { Child } from './child/child';
 //   nums=signal([0,1,2,3,4,5])
 // }
 
-// Pass Data from Parent to Child in Angular 
-export class App{
-  // userName = signal("deepak thakur")
-  users = signal(['deepak', 'peter', 'sam', 'bruce'])
-  newUser = signal('')
-  selectedUserName = signal('')
-
-  // addNewUser(){
-  //   if(this.newUser()){
-  //     this.users.update((item)=>[...item, this.newUser()])
-  //     this.newUser.set('')
-  //   }
-  // }
-
-  addNewUser(){
-    this.users.update((data)=>([...data, this.newUser()]))
-    this.newUser.set('');
-    this.selectedUserName = signal('')
-  }
-
-  selectedUser(name:string){
-    console.log(name)
-    this.selectedUserName.set(name)
-  }
-
-  deleteUser(name:string){
-    console.log(name)
-    this.users.update((data)=>data.filter((item)=>item!=name))
-  }
-}
-
-
+// // Pass Data from Parent to Child in Angular 
 // // Pass Data from Child to Parent Component 
 // export class App{
+//   // userName = signal("deepak thakur")
 //   users = signal(['deepak', 'peter', 'sam', 'bruce'])
 //   newUser = signal('')
+//   selectedUserName = signal('')
+
+//   // addNewUser(){
+//   //   if(this.newUser()){
+//   //     this.users.update((item)=>[...item, this.newUser()])
+//   //     this.newUser.set('')
+//   //   }
+//   // }
+
+//   addNewUser(){
+//     this.users.update((data)=>([...data, this.newUser()]))
+//     this.newUser.set('');
+//     this.selectedUserName = signal('')
+//   }
+
+//   selectedUser(name:string){
+//     console.log(name)
+//     this.selectedUserName.set(name)
+//   }
+
+//   deleteUser(name:string){
+//     console.log(name)
+//     this.users.update((data)=>data.filter((item)=>item!=name))
+//   }
 // }
+
+// Global State with Signals 
+export class App{
+
+}
