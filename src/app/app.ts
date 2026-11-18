@@ -389,6 +389,7 @@ export class App{
   // userName = signal("deepak thakur")
   users = signal(['deepak', 'peter', 'sam', 'bruce'])
   newUser = signal('')
+  selectedUserName = signal('')
 
   // addNewUser(){
   //   if(this.newUser()){
@@ -400,5 +401,23 @@ export class App{
   addNewUser(){
     this.users.update((data)=>([...data, this.newUser()]))
     this.newUser.set('');
+    this.selectedUserName = signal('')
+  }
+
+  selectedUser(name:string){
+    console.log(name)
+    this.selectedUserName.set(name)
+  }
+
+  deleteUser(name:string){
+    console.log(name)
+    this.users.update((data)=>data.filter((item)=>item!=name))
   }
 }
+
+
+// // Pass Data from Child to Parent Component 
+// export class App{
+//   users = signal(['deepak', 'peter', 'sam', 'bruce'])
+//   newUser = signal('')
+// }
