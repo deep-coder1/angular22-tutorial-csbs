@@ -1,15 +1,18 @@
 import { Component, computed, effect, Signal, signal, WritableSignal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { Profile } from './profile/profile';
-import { UserData } from './user-data/user-data';
-import { AdminData } from './admin-data/admin-data';
-import { FormsModule } from '@angular/forms';
-import { CommonModule, NgSwitch, NgSwitchCase, NgSwitchDefault } from '@angular/common';
-import { SearchBox } from './search-box/search-box';
-import { Child } from './child/child';
+import { DisplayCount } from './display-count/display-count';
+import { ControlCount } from './control-count/control-count';
+// import { Profile } from './profile/profile';
+// import { UserData } from './user-data/user-data';
+// import { AdminData } from './admin-data/admin-data';
+// import { FormsModule } from '@angular/forms';
+// import { CommonModule, NgSwitch, NgSwitchCase, NgSwitchDefault } from '@angular/common';
+// import { SearchBox } from './search-box/search-box';
+// import { Child } from './child/child';
 
 @Component({
-  imports: [RouterOutlet, Profile, UserData, AdminData, FormsModule, CommonModule, NgSwitchCase, NgSwitch, NgSwitchDefault, SearchBox, Child],
+  // imports: [RouterOutlet, Profile, UserData, AdminData, FormsModule, CommonModule, NgSwitchCase, NgSwitch, NgSwitchDefault, SearchBox, Child],
+  imports: [RouterOutlet, DisplayCount, ControlCount],
   selector: 'app-root',
   styleUrl: './app.css',
   templateUrl: './app.html',
