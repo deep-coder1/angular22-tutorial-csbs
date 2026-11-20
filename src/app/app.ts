@@ -419,7 +419,12 @@ import { ControlCount } from './control-count/control-count';
 //   }
 // }
 
-// Global State with Signals 
-export class App{
+// // Global State with Signals 
+// export class App{
 
+// }
+
+// Counter App in Angular with Signals
+export class App{
+  counter:WritableSignal<number>=signal<number>(0)
 }
